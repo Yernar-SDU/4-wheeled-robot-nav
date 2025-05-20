@@ -385,7 +385,7 @@ class GazeboEnv:
         self.prev_distance = distance
         self.prev_wall_real = self.min_wall_real
 
-        # Build observation
+        # Build observation #change
         self.prev_action = self.last_action
         self.last_action = np.array([action[0], action[1]], dtype=np.float32)
 
