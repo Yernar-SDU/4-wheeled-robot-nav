@@ -12,7 +12,7 @@
   </joint>
   <link name="${name}">
     <visual name="chassis_visual">
-      <origin xyz="-0.045 0 0.148" rpy="0 0 0"/>
+      <origin xyz="${xyz}" rpy="${rpy}"/>
       <geometry name="pioneer_geom">
         <mesh filename="${meshes}/chassis.stl"/>
       </geometry>
@@ -21,44 +21,24 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.045 0 0.148" rpy="0 0 0"/>
+      <origin xyz="-0.045 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="${meshes}/chassis.stl"/>
       </geometry>
     </collision>
-    <xacro:box_inertial x="0.36" y="0.26"  z="0.18" mass="9.0" />
+    <xacro:cylinder_inertial length="0.255718" radius="0.01715" mass="6.0" />
+    <!-- <inertial>
+      <origin xyz="0 0 -0.034" rpy="0 0 0"/> 
+      <mass value="9.0"/>
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/> 
+    </inertial> -->
+
   </link>
   <gazebo reference="${name}">
     <material value="Gazebo/Red"/>
   </gazebo>
 
-  <!-- Top -->
-  <joint name="${name}_top_joint" type="fixed">
-    <origin xyz="-0.045 0 0.234" rpy="0 0 0"/>
-    <parent link="${name}"/>
-    <child link="top"/>
-  </joint>
-  <link name="top">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="top_geom">
-        <mesh filename="${meshes}/top.stl"/>
-      </geometry>
-      <material name="TopBlack">
-        <color rgba="0.038 0.038 0.038 1.0"/>
-      </material>
-    </visual>
-    <collision>
-    <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="${meshes}/top.stl"/>
-      </geometry>
-    </collision>
-    <xacro:box_inertial x="0.445" y="0.38"  z="0.01" mass="1.0" />
-  </link>
-  <gazebo reference="top">
-    <material value="Gazebo/Black"/>
-  </gazebo>
+ 
 
   </xacro:macro>
 

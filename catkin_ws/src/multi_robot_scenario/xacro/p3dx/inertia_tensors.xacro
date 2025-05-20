@@ -38,6 +38,18 @@
     </inertial>
   </xacro:macro>
 
+
+    <xacro:macro name="our_trapezoid" params="x y z mass">
+    <inertial>
+      <origin xyz="0.0 0.0 -0.051054" rpy="0 0 0"/>
+      <mass value="${mass}" />
+      <inertia 
+        ixx="0.000054" ixy="0.0" ixz="0.0"
+        iyy="0.000047" iyz="0.0"
+        izz="0.000010" />
+    </inertial>
+  </xacro:macro>
+
   <!-- #################### versions with origin #################### -->
   <xacro:macro name="sphere_inertial_with_origin" params="radius mass *origin">
     <inertial>

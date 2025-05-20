@@ -64,7 +64,7 @@
       <origin xyz="0 0 0" rpy="${-3.1415927/2} 0 0"/>
       <geometry>
         <!--<mesh filename="${meshes}/${side}_wheel.stl"/>-->
-        <cylinder radius="${radius}" length="0.01"/>
+        <cylinder radius="${radius}" length="0.1"/>
       </geometry>
     </collision>
   </link>
